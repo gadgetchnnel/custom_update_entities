@@ -1,2 +1,2 @@
-# custom_update_entities
+# Custom Update Entities
 Custom Update Entities for Home Assistant
