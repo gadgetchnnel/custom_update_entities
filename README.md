@@ -46,4 +46,4 @@ List of updaters
 * **logo_url** `string` Optional  
   The URL of an image to use as the logo
 * **update_action** [action](https://www.home-assistant.io/docs/scripts/) Required  
-  The action to run to update the software - the `version` variable will be populated with the version to be installed
+  The action to run to update the software - the **version** template variable will be populated with the version to be installed and this can be used as `{{ version }}` in the script.
