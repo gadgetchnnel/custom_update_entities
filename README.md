@@ -37,7 +37,8 @@ custom_update_entities:
 
 <div id="user-content-toc">
   <ul>
-    Something
+    <b>updaters</b> `list` Required  
+    List of updaters
   </ul>
 </div>
 
