@@ -35,15 +35,15 @@ custom_update_entities:
 
 ### Options
 
-**updaters** `list` Required
+**updaters** `list` Required  
 List of updaters
-* **name** `string` Required
+* **name** `string` Required  
   Name of the software, etc. which this updater will update (this will be suffixed with ": Update" in the entity name
-* **latest_version_entity** `string` Required
+* **latest_version_entity** `string` Required  
   A sensor entity, the state of which contains the latest version of this software
-* **installed_version_entity** `string` Required
+* **installed_version_entity** `string` Required  
   A sensor entity, the state of which contains the currently installed version of this software
-* **logo_url** `string` Optional
+* **logo_url** `string` Optional  
   The URL of an image to use as the logo
-* **update_action** [action](https://www.home-assistant.io/docs/scripts/) Required
+* **update_action** [action](https://www.home-assistant.io/docs/scripts/) Required  
   The action to run to update the software - the `version` variable will be populated with the version to be installed
