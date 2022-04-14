@@ -35,13 +35,6 @@ custom_update_entities:
 
 ### Options
 
-<div id="user-content-toc">
-  <ul>
-    <b>updaters</b> `list` Required  
-    List of updaters
-  </ul>
-</div>
-
 * **updaters** `list` Required  
 List of updaters
     * **name** `string` Required  
