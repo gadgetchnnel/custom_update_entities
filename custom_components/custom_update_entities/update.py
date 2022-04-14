@@ -17,6 +17,7 @@ from .const import (
     CONF_LATEST_VERSION_ENTITY,
     CONF_INSTALLED_VERSION_ENTITY,
     CONF_LOGO_URL,
+    CONF_RELEASE_NOTES_URL,
     CONF_UPDATE_ACTION,
 )
 
@@ -55,7 +56,9 @@ class CustomUpdateEntity(UpdateEntity):
                                      self._attr_name, DOMAIN)
         self._attr_latest_version = None
         self._attr_installed_version = None
-        self._attr_release_url = f"https://www.home-assistant.io/latest-release-notes/"
+        release_notes_url = config.get(CONF_RELEASE_NOTES_URL, None)
+        if release_notes_url is not None:
+            self._attr_release_url = release_notes_url
         self._attr_title = config[CONF_NAME]
         logo_url = config.get(CONF_LOGO_URL, None)
         if logo_url is not None:

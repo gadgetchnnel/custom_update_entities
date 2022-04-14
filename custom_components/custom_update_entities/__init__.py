@@ -15,8 +15,9 @@ from .const import (
     CONF_NAME,
     CONF_LATEST_VERSION_ENTITY,
     CONF_INSTALLED_VERSION_ENTITY,
+    CONF_LOGO_URL,
+    CONF_RELEASE_NOTES_URL,
     CONF_UPDATE_ACTION,
-    CONF_LOGO_URL
 )
 
 _LOGGER = logging.getLogger(__name__)
@@ -27,6 +28,7 @@ UPDATER_ENTITY_SCHEMA = vol.Schema(
         vol.Required(CONF_LATEST_VERSION_ENTITY): cv.string,
         vol.Required(CONF_INSTALLED_VERSION_ENTITY): cv.string,
         vol.Optional(CONF_LOGO_URL): cv.string,
+        vol.Optional(CONF_RELEASE_NOTES_URL): cv.string,
         vol.Required(CONF_UPDATE_ACTION): cv.SCRIPT_SCHEMA,
          
     }
