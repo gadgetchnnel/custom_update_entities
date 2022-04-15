@@ -56,20 +56,22 @@ class CustomUpdateEntity(UpdateEntity):
                                      self._attr_name, DOMAIN)
         self._attr_latest_version = None
         self._attr_installed_version = None
-        release_notes_url = config.get(CONF_RELEASE_NOTES_URL, None)
+        release_notes_url = self.config.get(CONF_RELEASE_NOTES_URL, None)
         if release_notes_url is not None:
             self._attr_release_url = release_notes_url
-        self._attr_title = config[CONF_NAME]
-        logo_url = config.get(CONF_LOGO_URL, None)
-        if logo_url is not None:
-            self._attr_entity_picture = logo_url
-        
+        self._attr_title = self.config[CONF_NAME]
+
         entities = [self.config[CONF_LATEST_VERSION_ENTITY],
                     self.config[CONF_INSTALLED_VERSION_ENTITY]]
         _LOGGER.debug("Listening for state changes in %s" % json.dumps(entities))
         track_state_change(hass, entities, 
                            self.version_update, from_state=None, to_state=None)
     
+    @property
+    def entity_picture(self):
+        logo_url = self.config.get(CONF_LOGO_URL, None)
+        return logo_url
+
     def version_update(self, entity, old_state, new_state):
         state = new_state and new_state.state
         _LOGGER.debug("Entity %s State %s" % (entity, state))
