@@ -62,7 +62,7 @@ class CustomUpdateEntity(UpdateEntity):
         self._attr_title = config[CONF_NAME]
         logo_url = config.get(CONF_LOGO_URL, None)
         if logo_url is not None:
-            self_attr_entity_picture = logo_url
+            self._attr_entity_picture = logo_url
         
         entities = [self.config[CONF_LATEST_VERSION_ENTITY],
                     self.config[CONF_INSTALLED_VERSION_ENTITY]]
